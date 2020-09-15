@@ -1,0 +1,22 @@
+@import '../../styles/vars';
+
+header {
+    width: $full_wd;
+    & div.container-img{
+        width: 1920px;
+        height: 70vh;
+        background-image: url('../../assets/header-img.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #000000;
+        background-blend-mode: hard-light;
+        @media screen and (max-width: 950px) {
+            width: $full_wd;
+        }
+
+        & div.gradient-img{
+            height: 20px;
+            background-image: linear-gradient(to bottom, #000000, #000000);
+        }
+    }
+}
