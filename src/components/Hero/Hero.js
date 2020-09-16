@@ -11,7 +11,9 @@ class Hero extends React.Component {
         return (<div className="Hero">
             <header>
                 <div style={{width: `${this.widthResponse}px!important`}} className="container-img">
-                    <div className="gradient-img"></div>
+                    <div className="gradient-img">
+                        <p>¡Hace tu pedido desde casa, nosotros te lo llevamos!</p>
+                    </div>
                 </div>
             </header>
         </div>);
