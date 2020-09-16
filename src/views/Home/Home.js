@@ -3,18 +3,18 @@ import Nav from "../../components/Nav/Nav";
 import Hero from "../../components/Hero/Hero";
 import Foods from "../../components/Foods/Foods";
 import RequestFood from '../../redux/actions/foodAction';
-import {foods, addingFood, foodRequest} from '../../redux/actions/foodAction'
+import {addingFood, foodRequest} from '../../redux/actions/foodAction'
 import {connect} from 'react-redux';
 
 class Home extends React.Component {
   
   constructor(props) {
     super(props);
-    this.state = { date: new Date(), width: 0, height: 0 };
+    this.state = { width: 0, height: 0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    props.dispatch(RequestFood());
   }
   componentDidMount() {
+    this.props.dispatch(RequestFood());
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
   }

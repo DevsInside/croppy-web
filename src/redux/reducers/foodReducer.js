@@ -10,7 +10,6 @@ export default (state = initialState, action) =>{
             state.foods.push(action.payload);
             return state;
         case 'FOOD_REQUEST':
-
             return state;
         default: return state;
     }

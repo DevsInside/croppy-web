@@ -6,17 +6,16 @@ import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
-import AddIcon from '@material-ui/icons/Add';
-import tileData from './tileData';
-import store from '../../redux/store';
+import AddIcon from "@material-ui/icons/Add";
+import store from "../../redux/store";
 
 class Foods extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { foods:[] };
+    this.state = { foods: [] };
     store.subscribe(() => {
       this.setState({
-        foods: store.getState().foodReducer.foods
+        foods: store.getState().foodReducer.foods,
       });
     });
   }
@@ -28,7 +27,7 @@ class Foods extends React.Component {
         flexWrap: "wrap",
         justifyContent: "space-around",
         overflow: "hidden",
-        scrollSnapType: 'x mandatory',
+        scrollSnapType: "x mandatory",
         overflowScrolling: "touch",
         WebkitOverflowScrolling: "touch",
         backgroundColor: theme.palette.background.paper,
@@ -47,25 +46,38 @@ class Foods extends React.Component {
     return (
       <div className="Foods">
         <GridList cellHeight={280} className={classes.gridList}>
-          <GridListTile key="Subheader" cols={2} style={{ height: "auto"}}>
-            <ListSubheader component="div" style={{color:'#000000', fontSize: 20, fontWeight: 'bold', backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))'}}>Comidas</ListSubheader>
+          <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
+            <ListSubheader
+              component="div"
+              style={{
+                color: "#000000",
+                fontSize: 20,
+                fontWeight: "bold",
+                backgroundImage:
+                  "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
+              }}
+            >
+              Comidas
+            </ListSubheader>
           </GridListTile>
           {this.state.foods.map((tile) => (
             <GridListTile key={tile.key}>
-            <img src={tile.food.img} alt={tile.food.nombre} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>Desc: {tile.food.description}</span>}
-              actionIcon={
-                <IconButton
-                  aria-label={`info about ${tile.food.nombre}`}
-                  className={classes.icon}
-                >
-                  <AddIcon />
-                </IconButton>
-              }
-            />
-          </GridListTile>
+              <img src={tile.food.img} alt={tile.food.nombre} />
+              <GridListTileBar
+                title={tile.title}
+                subtitle={
+                  <span style={{ fontSize: 16 }}>{tile.food.description}</span>
+                }
+                actionIcon={
+                  <IconButton
+                    aria-label={`info about ${tile.food.nombre}`}
+                    className={classes.icon}
+                  >
+                    <AddIcon />
+                  </IconButton>
+                }
+              />
+            </GridListTile>
           ))}
         </GridList>
       </div>

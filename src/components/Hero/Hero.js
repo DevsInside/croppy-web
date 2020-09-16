@@ -2,10 +2,7 @@ import React from 'react';
 import './Hero.scss';
 
 class Hero extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
+    
     render(){
         return (<div className="Hero">
             <header>

@@ -7,7 +7,7 @@ class Nav extends React.Component {
       <nav className="navbar">
         <ul className="navbar-nav">
           <li className="logo">
-            <a href="#" className="nav-link">
+            <a href="#home" className="nav-link">
               <span className="link-text logo-text">Croppy</span>
               <svg
                 aria-hidden="true"
@@ -36,7 +36,7 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-            <a href="#" className="nav-link">
+            <a href="#home" className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -69,7 +69,7 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-            <a href="#" className="nav-link">
+            <a href="#foods" className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -126,7 +126,7 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-            <a href="#" className="nav-link">
+            <a href="#contacto" className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -162,7 +162,7 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-            <a href="#" className="nav-link">
+            <a href="#cart" className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -203,7 +203,7 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-            <a href="#" className="nav-link">
+            <a href="#login" className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -234,9 +234,8 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item" id="themeButton">
-            <a href="#" className="nav-link">
+            <a href="#theme" className="nav-link">
               <svg
-                className="theme-icon"
                 id="lightIcon"
                 aria-hidden="true"
                 focusable="false"
@@ -261,7 +260,6 @@ class Nav extends React.Component {
                 </g>
               </svg>
               <svg
-                className="theme-icon"
                 id="solarIcon"
                 aria-hidden="true"
                 focusable="false"
@@ -286,7 +284,6 @@ class Nav extends React.Component {
                 </g>
               </svg>
               <svg
-                className="theme-icon"
                 id="darkIcon"
                 aria-hidden="true"
                 focusable="false"
