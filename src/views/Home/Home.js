@@ -1,5 +1,4 @@
 import React from "react";
-//import BarHead from '../../components/BarHead/BarHead'
 import Nav from "../../components/Nav/Nav";
 import Hero from "../../components/Hero/Hero";
 import Foods from "../../components/Foods/Foods";
@@ -8,6 +7,7 @@ import {foods, addingFood, foodRequest} from '../../redux/actions/foodAction'
 import {connect} from 'react-redux';
 
 class Home extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = { date: new Date(), width: 0, height: 0 };

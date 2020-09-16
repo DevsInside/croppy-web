@@ -8,11 +8,17 @@ import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
 import AddIcon from '@material-ui/icons/Add';
 import tileData from './tileData';
+import store from '../../redux/store';
 
 class Foods extends React.Component {
   constructor(props) {
     super(props);
-    
+    this.state = { foods:[] };
+    store.subscribe(() => {
+      this.setState({
+        foods: store.getState().foodReducer.foods
+      });
+    });
   }
 
   render() {
@@ -44,22 +50,22 @@ class Foods extends React.Component {
           <GridListTile key="Subheader" cols={2} style={{ height: "auto"}}>
             <ListSubheader component="div" style={{color:'#000000', fontSize: 20, fontWeight: 'bold', backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))'}}>Comidas</ListSubheader>
           </GridListTile>
-          {tileData.map((tile) => (
-            <GridListTile key={tile.img+tile.title}>
-              <img src={tile.img} alt={tile.title} />
-              <GridListTileBar
-                title={tile.title}
-                subtitle={<span>by: {tile.author}</span>}
-                actionIcon={
-                  <IconButton
-                    aria-label={`info about ${tile.title}`}
-                    className={classes.icon}
-                  >
-                    <AddIcon />
-                  </IconButton>
-                }
-              />
-            </GridListTile>
+          {this.state.foods.map((tile) => (
+            <GridListTile key={tile.key}>
+            <img src={tile.food.img} alt={tile.food.nombre} />
+            <GridListTileBar
+              title={tile.title}
+              subtitle={<span>Desc: {tile.food.description}</span>}
+              actionIcon={
+                <IconButton
+                  aria-label={`info about ${tile.food.nombre}`}
+                  className={classes.icon}
+                >
+                  <AddIcon />
+                </IconButton>
+              }
+            />
+          </GridListTile>
           ))}
         </GridList>
       </div>

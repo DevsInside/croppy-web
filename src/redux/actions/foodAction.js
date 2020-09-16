@@ -20,7 +20,7 @@ const RequestFood = () => {
     return dispatch => {
         dispatch(foodRequest());
         firebase.database().ref('foods').on('child_added', (snapshot) => {
-            dispatch(addingFood(snapshot.val()));
+            dispatch(addingFood({key: snapshot.key, food: snapshot.val()}));
         });
     }
 }
