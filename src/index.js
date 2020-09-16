@@ -6,6 +6,9 @@ import * as firebase from 'firebase/app'
 import 'firebase/analytics'
 import Home from './views/Home/Home'
 
+import {Provider} from 'react-redux';
+import store from './redux/store'
+
 var firebaseConfig = {
   apiKey: "AIzaSyB0rKKiBV9z84wUrzoEqGL1nB3gfAM0u48",
   authDomain: "croppy-11355.firebaseapp.com",
@@ -20,9 +23,13 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
+const Application = () => (<Provider store={store}>
+  <Home />
+</Provider>);
+
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Application />
   </React.StrictMode>,
   document.getElementById('root')
 );
