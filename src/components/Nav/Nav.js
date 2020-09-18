@@ -1,7 +1,13 @@
 import "./Nav.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Nav extends React.Component {
+
+  pushTo(path){
+    this.props.history.push(path);
+  }
+
   render() {
     return (
       <nav className="navbar">
@@ -36,7 +42,8 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-            <a href="#home" className="nav-link">
+          <Link className="lk-txt" to="/">
+            <a href className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -65,9 +72,9 @@ class Nav extends React.Component {
                 </g>
               </svg>
               <span className="link-text">Inicio</span>
-            </a>
+            </a></Link>
           </li>
-
+          
           <li className="nav-item">
             <a href="#foods" className="nav-link">
               <svg
@@ -126,7 +133,8 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-            <a href="#contacto" className="nav-link">
+          <Link className="lk-txt" to="/contact">
+            <a href className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -159,10 +167,13 @@ class Nav extends React.Component {
               </svg>
               <span className="link-text">Contacto</span>
             </a>
+            </Link>
           </li>
 
           <li className="nav-item">
-            <a href="#cart" className="nav-link">
+          <Link className="lk-txt" to="/cart">
+            <a href className="nav-link">
+              
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -200,10 +211,12 @@ class Nav extends React.Component {
               </svg>
               <span className="link-text">Carrito</span>
             </a>
+            </Link>
           </li>
 
           <li className="nav-item">
-            <a href="#login" className="nav-link">
+          <Link className="lk-txt" to="/login">
+            <a href className="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -231,6 +244,7 @@ class Nav extends React.Component {
               </svg>
               <span className="link-text">Iniciar sesión</span>
             </a>
+            </Link>
           </li>
 
           <li className="nav-item" id="themeButton">

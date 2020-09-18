@@ -13,6 +13,14 @@
     margin-bottom: $mb+px;
 }
 
+@mixin stylishText(){
+    letter-spacing: 0.3ch;
+}
+
+@mixin center(){
+    text-align: center;
+}
+
 @for $i from 1 through 10 {
     .mr-#{$i} {
         @include marginRight($i);

@@ -3,8 +3,16 @@ import Nav from "../../components/Nav/Nav";
 import Hero from "../../components/Hero/Hero";
 import Foods from "../../components/Foods/Foods";
 import RequestFood from '../../redux/actions/foodAction';
-import {addingFood, foodRequest} from '../../redux/actions/foodAction'
-import {connect} from 'react-redux';
+import { addingFood, foodRequest } from '../../redux/actions/foodAction'
+import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Contact from "../Contact/Contact";
+import Cart from "../Cart/Cart";
+import Login from "../Login/Login";
 
 class Home extends React.Component {
   
@@ -29,11 +37,26 @@ class Home extends React.Component {
   
   render() {
     return (
-      <div className="Home">
-        <Nav />
-        <Hero widthResponse={this.state.width} />
-        <Foods />
-      </div>
+      <Router>
+        <div className="Home">
+          <Nav />
+          <Hero widthResponse={this.state.width} />
+          <Switch>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/">
+                <Foods />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
