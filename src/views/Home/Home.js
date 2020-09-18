@@ -14,6 +14,12 @@ import Contact from "../Contact/Contact";
 import Cart from "../Cart/Cart";
 import Login from "../Login/Login";
 
+const RenderFoods = () => (
+  <div className="foodRend">
+    <Foods />
+  </div>
+);
+
 class Home extends React.Component {
   
   constructor(props) {
@@ -51,9 +57,7 @@ class Home extends React.Component {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/">
-                <Foods />
-            </Route>
+            <Route exact path="/" render={RenderFoods} />
           </Switch>
         </div>
       </Router>

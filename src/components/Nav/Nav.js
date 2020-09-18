@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 
 class Nav extends React.Component {
 
-  pushTo(path){
-    this.props.history.push(path);
-  }
-
   render() {
     return (
       <nav className="navbar">
@@ -42,8 +38,7 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-          <Link className="lk-txt" to="/">
-            <a href className="nav-link">
+          <Link className="nav-link" to="/">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -72,7 +67,7 @@ class Nav extends React.Component {
                 </g>
               </svg>
               <span className="link-text">Inicio</span>
-            </a></Link>
+              </Link>
           </li>
           
           <li className="nav-item">
@@ -133,8 +128,7 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item">
-          <Link className="lk-txt" to="/contact">
-            <a href className="nav-link">
+          <Link className="nav-link" to="/contact">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -166,14 +160,11 @@ class Nav extends React.Component {
                 </g>
               </svg>
               <span className="link-text">Contacto</span>
-            </a>
             </Link>
           </li>
 
           <li className="nav-item">
-          <Link className="lk-txt" to="/cart">
-            <a href className="nav-link">
-              
+          <Link className="nav-link" to="/cart">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -210,13 +201,11 @@ class Nav extends React.Component {
                 </g>
               </svg>
               <span className="link-text">Carrito</span>
-            </a>
             </Link>
           </li>
 
           <li className="nav-item">
-          <Link className="lk-txt" to="/login">
-            <a href className="nav-link">
+          <Link className="nav-link" to="/login">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -243,7 +232,6 @@ class Nav extends React.Component {
                 </g>
               </svg>
               <span className="link-text">Iniciar sesión</span>
-            </a>
             </Link>
           </li>
 

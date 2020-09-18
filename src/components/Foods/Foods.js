@@ -13,11 +13,25 @@ class Foods extends React.Component {
   constructor(props) {
     super(props);
     this.state = { foods: [] };
-    store.subscribe(() => {
+    this.unsubscribe = null;
+  }
+
+  componentDidMount(){
+    const fs = store.getState().foodReducer.foods;
+    if(fs.length > 0){
+      this.setState({
+        foods: fs
+      });
+    }
+    this.unsubscribe = store.subscribe(() => {
       this.setState({
         foods: store.getState().foodReducer.foods,
       });
     });
+  }
+
+  componentWillUnmount(){
+    this.unsubscribe();
   }
 
   render() {
@@ -44,7 +58,7 @@ class Foods extends React.Component {
     }));
     const classes = useStyles;
     return (
-      <div className="Foods">
+      <div id="foods" className="Foods">
         <GridList cellHeight={280} className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
             <ListSubheader
