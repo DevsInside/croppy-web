@@ -6,7 +6,7 @@ import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
-import AddIcon from "@material-ui/icons/Add";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import store from "../../redux/store";
 
 class Foods extends React.Component {
@@ -76,7 +76,7 @@ class Foods extends React.Component {
           </GridListTile>
           {this.state.foods.map((tile) => (
             <GridListTile key={tile.key}>
-              <img src={tile.food.img} alt={tile.food.nombre} />
+              <img src={tile.food.img} className="foodImage" alt={tile.food.nombre} />
               <GridListTileBar
                 title={tile.title}
                 subtitle={
@@ -87,7 +87,7 @@ class Foods extends React.Component {
                     aria-label={`info about ${tile.food.nombre}`}
                     className={classes.icon}
                   >
-                    <AddIcon />
+                    <AddShoppingCartIcon />
                   </IconButton>
                 }
               />

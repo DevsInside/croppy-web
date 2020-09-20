@@ -13,13 +13,14 @@ import {
 import Contact from "../Contact/Contact";
 import Cart from "../Cart/Cart";
 import Login from "../Login/Login";
+import Recommended from "../../components/Recommended/Recommended";
 
 const RenderFoods = () => (
   <div className="foodRend">
+    <Recommended />
     <Foods />
   </div>
 );
-
 class Home extends React.Component {
   
   constructor(props) {

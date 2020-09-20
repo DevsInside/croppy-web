@@ -5,7 +5,6 @@ import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase/app'
 import 'firebase/analytics'
 import Home from './views/Home/Home'
-
 import {Provider} from 'react-redux';
 import store from './redux/store'
 
@@ -19,6 +18,8 @@ var firebaseConfig = {
   appId: "1:654649561601:web:143a43700ba7d4f16a6600",
   measurementId: "G-Z1JSH0ZD3R"
 };
+
+
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();

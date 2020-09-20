@@ -1,0 +1,22 @@
+@import '../../styles/vars';
+@import '../../styles/utilities';
+
+.Recommended {
+    padding-left: 6rem;
+    margin-bottom: 10px;
+    & h3{
+        @include stylishText();
+        font-weight: bold;
+    }
+    @media screen and (max-width: 900px) {
+        padding-left: 10px!important;
+    }
+}
+
+.RecommendedList{
+    display: flex;
+    flex-direction: row;
+    *{
+         margin-right: 0.5rem!important;
+    }
+}
