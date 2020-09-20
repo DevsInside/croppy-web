@@ -2,8 +2,35 @@ import "./Nav.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo.svg';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import List from '@material-ui/core/List';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import Slide from '@material-ui/core/Slide';
 
 class Nav extends React.Component {
+
+  constructor(props){
+    super (props);
+    this.state = {
+      open: false
+    };
+    this.Transition = React.forwardRef(function Transition(props, ref) {
+      return <Slide direction="up" ref={ref} {...props} />;
+    });
+  }
+
+  showContact(){
+    this.setState({open: true});
+  }
+
+  closeContact(value){
+    this.setState({open: false});
+  }
+
   render() {
     return (
       <nav className="navbar">
@@ -236,13 +263,25 @@ class Nav extends React.Component {
           </li>
 
           <li className="nav-item" id="themeButton">
-            <a href="#theme" className="nav-link">
+            <a href onClick={ () => this.showContact() } className="nav-link">
               <div className="centered">
-              <img src={logo} height="80" alt="logo" width="120"/>
+              <img src={logo} height="80" alt="logo" width="140"/>
               </div>
             </a>
           </li>
         </ul>
+        <Dialog fullScreen open={this.state.open} onClose={(value) => this.closeContact(value)} TransitionComponent={this.Transition}>
+          <AppBar position="static" className="appBar">
+            <Toolbar>
+              <IconButton edge="start" color="inherit" onClick={(value) => this.closeContact(value)} aria-label="close">
+                <CloseIcon />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
+          <List>
+            
+          </List>
+        </Dialog>
       </nav>
     );
   }

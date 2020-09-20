@@ -14,6 +14,8 @@ import Contact from "../Contact/Contact";
 import Cart from "../Cart/Cart";
 import Login from "../Login/Login";
 import Recommended from "../../components/Recommended/Recommended";
+import { ThemeProvider } from "@material-ui/core";
+import themedf from '../../themes/themedf';
 
 const RenderFoods = () => (
   <div className="foodRend">
@@ -44,7 +46,8 @@ class Home extends React.Component {
   
   render() {
     return (
-      <Router>
+      <ThemeProvider theme={ themedf }>
+        <Router>
         <div className="Home">
           <Nav />
           <Hero widthResponse={this.state.width} />
@@ -62,6 +65,7 @@ class Home extends React.Component {
           </Switch>
         </div>
       </Router>
+      </ThemeProvider>
     );
   }
 }
