@@ -10,9 +10,9 @@ class FoodCard extends React.Component {
             <Card className="FCard">
                 <CardMedia className="imgCard"
                     image="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                    title="Paella dish"/>
+                    title="Paella dish" />
                 <CardContent>
-                    {this.props.body}
+                    { this.props.body }
                 </CardContent>
                 <CardActions className="actions">
                     <IconButton aria-label="favorite">

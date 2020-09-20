@@ -30,7 +30,16 @@ header {
                 font-weight: bold;
                 font-size: 20px;
             }
-
+            @media screen and (max-width: 1280px) {
+                >p {
+                    color: #ffffff;
+                    text-align: center;
+                    font-family: 'Open Sans';
+                    letter-spacing: 0.5ch;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
             @media screen and (max-width: 950px) {
                 >p {
                     color: #ffffff;

@@ -53,7 +53,7 @@ class Foods extends React.Component {
         zIndex: -1,
       },
       icon: {
-        color: "rgba(255, 255, 255, 0.54)",
+        color: "rgba(255,255,255, 0.9)",
       },
     }));
     const classes = useStyles;
@@ -85,9 +85,8 @@ class Foods extends React.Component {
                 actionIcon={
                   <IconButton
                     aria-label={`info about ${tile.food.nombre}`}
-                    className={classes.icon}
-                  >
-                    <AddShoppingCartIcon />
+                    className={classes.icon}>
+                    <AddShoppingCartIcon style={{color: 'rgba(255,255,255, 0.9)'}}/>
                   </IconButton>
                 }
               />
