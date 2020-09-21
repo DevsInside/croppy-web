@@ -6,23 +6,23 @@ export const USER_REQUEST = 'USER_REQUEST';
 export const userRequest = () => {
     return {
         type: USER_REQUEST
-    }
+    };
 };
 
-export const userStateChanged = (Food) => {
+export const userStateChanged = (id) => {
     return {
         type: 'USER_STATE_CHANGED',
-        payload: Food
+        payload: id
     };
 };
 
 const RequestUser = () => {
     return dispatch => {
         dispatch(userRequest());
-        firebase.auth().onAuthStateChanged((user) =>{
+        firebase.auth().onAuthStateChanged((user) => {
             dispatch(userStateChanged(user.id));
         });
-    }
+    };
 }
 
 export default RequestUser;

@@ -265,12 +265,12 @@ class Nav extends React.Component {
           <li className="nav-item" id="themeButton">
             <a href onClick={ () => this.showContact() } className="nav-link">
               <div className="centered">
-              <img src={logo} height="80" alt="logo" width="140"/>
+              <img src={logo} className="logoResp" height="80" alt="logo"/>
               </div>
             </a>
           </li>
         </ul>
-        <Dialog fullScreen open={this.state.open} onClose={(value) => this.closeContact(value)} TransitionComponent={this.Transition}>
+        <Dialog fullScreen open={this.state.open} onClose={ (value) => this.closeContact(value) } TransitionComponent={ this.Transition }>
           <AppBar position="static" className="appBar">
             <Toolbar>
               <IconButton edge="start" color="inherit" onClick={(value) => this.closeContact(value)} aria-label="close">
