@@ -2,14 +2,13 @@ import "./Nav.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo.svg';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import List from '@material-ui/core/List';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
+import { Button, DialogContent, DialogContentText, TextField } from "@material-ui/core";
 
 class Nav extends React.Component {
 
@@ -276,11 +275,46 @@ class Nav extends React.Component {
               <IconButton edge="start" color="inherit" onClick={(value) => this.closeContact(value)} aria-label="close">
                 <CloseIcon />
               </IconButton>
+              <br/>
+              <br/>
+              <br/>
+              <img src={logo} className="logoResp" />
             </Toolbar>
           </AppBar>
-          <List>
-            
-          </List>
+          <DialogContent>
+            <DialogContentText>
+              <h3 style={{color:'black'}}>¿Quieres que diseñemos una web, sistema o aplicación para tu emprendimiento? ¡Nosotros te contactamos!</h3>
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Nombre"
+              type="text"
+              fullWidth
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="email"
+              label="Email"
+              type="email"
+              fullWidth
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="phone"
+              label="Teléfono"
+              type="tel"
+              fullWidth
+            />
+            <br/>
+            <br/>
+            <Button variant="contained" color="primary" disableElevation>
+              Enviar contacto
+            </Button>
+          </DialogContent>
         </Dialog>
       </nav>
     );

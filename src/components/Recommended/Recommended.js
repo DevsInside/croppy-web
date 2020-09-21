@@ -76,8 +76,8 @@ class Recommended extends React.Component {
       if (this.state.pos <= scSize && this.movingForward) {
         let calcNext = this.state.pos + scrollMoving;
         this.setState({ pos: calcNext > scSize ? scSize : calcNext });
-        if(calcNext > scSize){
-            this.movingForward = false;
+        if (calcNext > scSize) {
+          this.movingForward = false;
         }
       } else if (this.state.pos > 0) {
         this.movingForward = false;
