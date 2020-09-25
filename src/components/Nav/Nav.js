@@ -278,7 +278,7 @@ class Nav extends React.Component {
               <br/>
               <br/>
               <br/>
-              <img src={logo} className="logoResp" />
+              <img src={logo} alt="Logo" className="logoResp" />
             </Toolbar>
           </AppBar>
           <DialogContent>
