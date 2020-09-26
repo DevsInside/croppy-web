@@ -114,11 +114,12 @@ class Recommended extends React.Component {
           {this.state.inside ? (
             <p>
               <IconButton
+                size="medium"
                 onClick={() => this.backwardScroll()}
-                style={{ color: "black" }}
+                style={{ color: "black"}}
                 aria-label="delete"
               >
-                <ArrowBackIosIcon />
+                <ArrowBackIosIcon fontSize="large" />
               </IconButton>
             </p>
           ) : null}
@@ -130,17 +131,18 @@ class Recommended extends React.Component {
             className="RecommendedList"
           >
             {maping.map((val) => {
-              return <FoodCard body={`Probando foodcard ${val}`} />;
+              return <FoodCard key={`${val}`} body={`Probando foodcard ${val}`} />;
             })}
           </ScrollContainer>
           {this.state.inside ? (
             <p>
               <IconButton
+                size="medium"
                 onClick={() => this.forwardScroll()}
                 style={{ color: "black" }}
                 aria-label="delete"
               >
-                <ArrowForwardIosIcon />
+                <ArrowForwardIosIcon fontSize="large" />
               </IconButton>
             </p>
           ) : null}

@@ -14,6 +14,7 @@ import Contact from "../Contact/Contact";
 import Cart from "../Cart/Cart";
 import Login from "../Login/Login";
 import Recommended from "../../components/Recommended/Recommended";
+import PopUpMobile from "../../components/PopUpMobile/PopUpMobile";
 import { ThemeProvider } from "@material-ui/core";
 import themedf from '../../themes/themedf';
 
@@ -49,6 +50,7 @@ class Home extends React.Component {
       <ThemeProvider theme={ themedf }>
         <Router>
         <div className="Home">
+          <PopUpMobile />
           <Nav />
           <Hero widthResponse={this.state.width} />
           <Switch>

@@ -1,33 +1,37 @@
 import "./Nav.scss";
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.svg';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Slide from '@material-ui/core/Slide';
-import { Button, DialogContent, DialogContentText, TextField } from "@material-ui/core";
+import logo from "../../assets/logo.svg";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Slide from "@material-ui/core/Slide";
+import {
+  Button,
+  DialogContent,
+  DialogContentText,
+  TextField,
+} from "@material-ui/core";
 
 class Nav extends React.Component {
-
-  constructor(props){
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
-      open: false
+      open: false,
     };
     this.Transition = React.forwardRef(function Transition(props, ref) {
       return <Slide direction="up" ref={ref} {...props} />;
     });
   }
 
-  showContact(){
-    this.setState({open: true});
+  showContact() {
+    this.setState({ open: true });
   }
 
-  closeContact(value){
-    this.setState({open: false});
+  closeContact(value) {
+    this.setState({ open: false });
   }
 
   render() {
@@ -198,7 +202,7 @@ class Nav extends React.Component {
                 data-icon="space-shuttle"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
+                viewBox="0 0 512 512"
                 className="svg-inline--fa fa-space-shuttle fa-w-20 fa-5x"
               >
                 <g className="fa-group">
@@ -233,57 +237,58 @@ class Nav extends React.Component {
           <li className="nav-item">
             <Link className="nav-link" to="/login">
               <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fad"
-                data-icon="space-shuttle"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-                className="svg-inline--fa fa-space-shuttle fa-w-20 fa-5x"
+                x="0"
+                y="0"
+                enableBackground="new 0 0 512 512"
+                version="1.1"
+                viewBox="0 0 512 512"
+                xmlSpace="preserve"
               >
                 <g className="fa-group">
-                  <path
-                    fill="currentColor"
-                    className="fa-secondary"
-                    d="M452,0H60C26.916,0,0,26.916,0,60v80h40V60c0-11.028,8.972-20,20-20h392c11.028,0,20,8.972,20,20v392
-			c0,11.028-8.972,20-20,20H60c-11.028,0-20-8.972-20-20v-80H0v80c0,33.084,26.916,60,60,60h392c33.084,0,60-26.916,60-60V60
-			C512,26.916,485.084,0,452,0z"
-                  />
-                  <polygon
-                    className="fa-primary"
-                    fill="currentColor"
-                    points="240,131.716 211.716,160 287.716,236 0,236 0,276 287.716,276 211.716,352 240,380.284 364.284,256"
-                  />
+                  <path className="fa-primary" fill="currentColor" d="M374.45 332.463c-.407-.044-59.344 1.695-68.107-61.463 9.737-6.794 18.711-15.614 26.617-26.316 15.38-20.82 25.29-46.938 28.82-75.189a11.457 11.457 0 002.893-4.071c6.387-15.215 9.626-31.461 9.626-48.289C374.299 52.547 325.578 0 265.688 0c-15.663 0-30.859 3.608-45.211 10.733a79.443 79.443 0 00-15.985 2.867c-24.597 7.107-44.613 25.344-56.362 51.354-11.406 25.254-13.654 54.983-6.328 83.712a134.862 134.862 0 005.85 17.731 11.459 11.459 0 002.705 3.938c5.718 44.095 26.699 80.63 55.307 100.577-8.79 63.265-67.706 61.509-68.112 61.553-42.382 1.438-76.425 36.341-76.425 79.067v88.941c0 6.367 5.161 11.528 11.528 11.528h366.691c6.366 0 11.529-5.161 11.529-11.528v-88.941c-.001-42.728-34.041-77.632-76.425-79.069zM210.893 35.751c4.207-1.216 8.65-1.937 13.206-2.142a11.517 11.517 0 004.843-1.311c11.671-6.132 24.035-9.241 36.747-9.241 47.174 0 85.554 42.203 85.554 94.078 0 1.557-.044 3.106-.112 4.649-9.15-9.292-21.863-15.067-35.902-15.067h-78.571c-4.675 0-9.112-1.468-12.833-4.246a21.482 21.482 0 01-7.1-9.216 14.062 14.062 0 00-13.972-8.814 14.15 14.15 0 00-12.816 10.579c-4.553 17.496-13.632 33.612-26.088 46.681-11.59-47.699 9.327-95.053 47.044-105.95zm-10.03 199.389c-15.001-18.326-24.825-43.073-27.939-70.166 14.547-12.965 26.047-29.099 33.534-46.995a44.952 44.952 0 003.575 2.97c7.736 5.773 16.942 8.826 26.626 8.826h78.571c11.117 0 20.699 6.668 24.975 16.211-.001.082-.013.16-.013.242 0 65.078-37.76 118.023-84.174 118.023-20.2.001-39.789-10.338-55.155-29.111zm26.489 47.093c9.139 3.307 18.752 5.076 28.666 5.076 9.835 0 19.444-1.712 28.643-5.015 4.221 21.991 16.448 41.158 33.527 54.353l-60.535 86.208c-.395.563-.944.848-1.632.848-.687 0-1.236-.286-1.63-.847l-60.55-86.228c17.08-13.21 29.303-32.391 33.511-54.395zm200.465 206.71H84.183V411.53c0-30.922 25.157-56.079 56.079-56.079.42 0 18.971-.451 33.629-7.112l61.629 87.766a25.072 25.072 0 0020.5 10.655h.001a25.073 25.073 0 0020.5-10.655l61.618-87.752c16.717 7.099 33.18 7.099 33.6 7.099 30.922 0 56.078 25.157 56.078 56.079v77.412z"></path>
                 </g>
-              </svg>
+                </svg>
               <span className="link-text">Iniciar sesión</span>
             </Link>
           </li>
 
           <li className="nav-item" id="themeButton">
-            <a href onClick={ () => this.showContact() } className="nav-link">
+            <a href onClick={() => this.showContact()} className="nav-link">
               <div className="centered">
-              <img src={logo} className="logoResp" height="80" alt="logo"/>
+                <img src={logo} className="logoResp" height="80" alt="logo" />
               </div>
             </a>
           </li>
         </ul>
-        <Dialog fullScreen open={this.state.open} onClose={ (value) => this.closeContact(value) } TransitionComponent={ this.Transition }>
+        <Dialog
+          fullScreen
+          open={this.state.open}
+          onClose={(value) => this.closeContact(value)}
+          TransitionComponent={this.Transition}
+        >
           <AppBar position="static" className="appBar">
             <Toolbar>
-              <IconButton edge="start" color="inherit" onClick={(value) => this.closeContact(value)} aria-label="close">
+              <IconButton
+                edge="start"
+                color="inherit"
+                onClick={(value) => this.closeContact(value)}
+                aria-label="close"
+              >
                 <CloseIcon />
               </IconButton>
-              <br/>
-              <br/>
-              <br/>
+              <br />
+              <br />
+              <br />
               <img src={logo} alt="Logo" className="logoResp" />
             </Toolbar>
           </AppBar>
           <DialogContent>
             <DialogContentText>
-              <h3 style={{color:'black'}}>¿Quieres que diseñemos una web, sistema o aplicación para tu emprendimiento? ¡Nosotros te contactamos!</h3>
+              <h3 style={{ color: "black" }}>
+                ¿Quieres que diseñemos una web, sistema o aplicación para tu
+                emprendimiento? ¡Nosotros te contactamos!
+              </h3>
             </DialogContentText>
             <TextField
               autoFocus
@@ -309,8 +314,8 @@ class Nav extends React.Component {
               type="tel"
               fullWidth
             />
-            <br/>
-            <br/>
+            <br />
+            <br />
             <Button variant="contained" color="primary" disableElevation>
               Enviar contacto
             </Button>
