@@ -1,0 +1,46 @@
+@import '../../styles/vars';
+@import '../../styles/utilities';
+
+.Recommended {
+    padding-left: 6rem;
+    margin-bottom: 10px;
+    & h3{
+        @include stylishText();
+        font-weight: bold;
+    }
+    @media screen and (max-width: 900px) {
+        padding-left: 10px!important;
+    }
+
+    & .scrollNext{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        & p:first-child {
+            position: absolute;
+            font-weight: bold;
+            font-size: 32px;
+            left: 0;
+            right: auto;
+            padding-top: 45px;
+        }
+        & p:last-child {
+            position: absolute;
+            font-weight: bold;
+            font-size: 32px;
+            left: auto;
+            right: 0;
+            padding-top: 45px;
+            padding-right: 10px;
+        }
+    }
+}
+
+
+.RecommendedList{
+    display: flex;
+    flex-direction: row;
+    *{
+         margin-right: 0.5rem!important;
+    }
+}

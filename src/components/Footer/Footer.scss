@@ -1,0 +1,39 @@
+@import '../../styles/vars';
+@import '../../styles/utilities';
+
+footer {
+    text-align: center;
+    color: $bg_color;
+    &.foot{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: $secondary_color;
+        z-index: -1;
+    }
+    @media screen and (max-width: 985px) {
+        display: none;
+    }
+    & div.contact-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        @include marginBottom(8);
+        >a{
+            text-decoration: none;
+            font-size: $icon_size;
+            @include marginRight(34);
+            &.twitter{
+                color: #1CA0F0;
+            }
+            &.linkedin{
+                color: aqua;
+            }
+            &.facebook{
+                color: rgba($color: #4267B2, $alpha: 1.0);
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@mixin marginRight($mr:0px){
+    margin-right: $mr+px;
+}
+@mixin marginLeft($ml:0px){
+    margin-left: $ml+px;
+}
+
+@mixin marginTop($mt:0px){
+    margin-top: $mt+px;
+}
+
+@mixin marginBottom($mb:0px){
+    margin-bottom: $mb+px;
+}
+
+@mixin stylishText(){
+    letter-spacing: 0.3ch;
+}
+
+@mixin center(){
+    text-align: center;
+}
+
+@for $i from 1 through 10 {
+    .mr-#{$i} {
+        @include marginRight($i);
+    }
+    .ml-#{$i} {
+        @include marginLeft($i);
+    }
+    .mt-#{$i} {
+        @include marginTop($i);
+    }
+    .mb-#{i} {
+        @include marginBottom($i);
+    }
+}
